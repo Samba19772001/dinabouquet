@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#64172a">
+  <meta name="description"
+    content="Dina Bouquet, fleuriste à Thiès : bouquets, cadeaux personnalisés et créations prestige.">
+  <title>Accueil | Dina Bouquet</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="announcement"><span>Fleuriste à Thiès · Commandes personnalisées</span><span class="announcement-note">Des
+      cadeaux qui parlent au cœur</span></div>
+  <header class="site-header">
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <a class="brand" href="index.html" aria-label="Dina Bouquet, accueil"><span class="brand-mark">✿</span><span
+        class="brand-name">DINA BOUQUET</span><span class="brand-tagline">FLEURS · CADEAUX · ÉMOTIONS</span></a>
+    <nav class="nav-links" id="navLinks"><a href="index.html" aria-current="page">Accueil</a><a
+        href="collections.html">Collections</a><a href="sur-mesure.html">Sur mesure</a><a
+        href="galerie.html">Galerie</a></a><a href="contact.html">Contact</a></nav>
+    <button class="cart-button" id="openCart" aria-label="Ouvrir le panier"><span
+        class="cart-icon">♧</span><span>Panier</span><b id="cartCount">0</b></button>
+  </header>
+  <main>
+    <section class="hero reveal" id="accueil">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> L'ART D'OFFRIR</p>
+        <h1>Des cadeaux qui marquent <em>les plus beaux instants.</em></h1>
+        <p class="hero-text">Bouquets de fleurs, bouquets d'argent et créations d'exception imaginés pour transformer
+          chaque occasion en souvenir précieux.</p>
+        <div class="hero-actions"><a class="button button-primary" href="collections.html">Découvrir les collections
+            <span>↗</span></a><a class="button button-outline" href="sur-mesure.html">Créer un cadeau unique</a></div>
+        <div class="trust-row"><span>✧ Créations soignées</span><i></i><span>♡ Personnalisation</span><i></i><span>⌁
+            Livraison à organiser</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image-wrap"><img src="assets/images/ours-peluche-bouquet.jpeg"
+            alt="Peluche et bouquet de roses" class="hero-image"></div>
+        <div class="floating-note">Plus qu'un cadeau,<br><em>une émotion.</em><span>♡</span></div>
+        <div class="hero-stamp">FAIT AVEC<br><b>AMOUR</b></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow centered">NOS COLLECTIONS</p>
+        <h2>L'art d'offrir autrement</h2>
+        <p>Des créations uniques pour chaque occasion spéciale.</p>
+      </div>
+      <div class="collection-grid">
+        <article class="collection-card reveal" data-category="Bouquets de fleurs"
+          data-image="assets/images/ours-peluche-bouquet.jpeg">
+          <div class="collection-image"><img src="assets/images/ours-peluche-bouquet.jpeg" alt="Bouquet de roses"
+              loading="lazy"><span class="card-number">01</span></div>
+          <div class="collection-info">
+            <div>
+              <h3>Bouquets de fleurs</h3>
+              <p>Émotion et élégance</p>
+            </div><button class="arrow-button" aria-label="Ajouter une demande de bouquet de fleurs"
+              data-add="Bouquets de fleurs">↗</button>
+          </div>
+        </article>
+        <article class="collection-card reveal" data-category="Bouquets d'argent"
+          data-image="assets/images/ours-bouquets-argent.jpeg">
+          <div class="collection-image"><img src="assets/images/ours-bouquets-argent.jpeg" alt="Bouquets d'argent"
+              loading="lazy"><span class="card-number">02</span></div>
+          <div class="collection-info">
+            <div>
+              <h3>Bouquets d'argent</h3>
+              <p>Offrez plus qu'un bouquet</p>
+            </div><button class="arrow-button" aria-label="Ajouter une demande de bouquet d'argent"
+              data-add="Bouquets d'argent">↗</button>
+          </div>
+        </article>
+        <article class="collection-card reveal" data-category="Mariage & Packs Or"
+          data-image="assets/images/ours-bouquets-argent.jpeg">
+          <div class="collection-image"><img src="assets/images/ours-bouquets-argent.jpeg"
+              alt="Emballages cadeaux prestige" loading="lazy"><span class="card-number">03</span><span
+              class="image-label">PRESTIGE</span></div>
+          <div class="collection-info">
+            <div>
+              <h3>Mariage & Packs Or</h3>
+              <p>Pour les grands jours</p>
+            </div><button class="arrow-button" aria-label="Ajouter une demande mariage et pack or"
+              data-add="Mariage & Packs Or">↗</button>
+          </div>
+        </article>
+        <article class="collection-card reveal" data-category="Peluches & cadeaux"
+          data-image="assets/images/ours-peluche-bouquet.jpeg">
+          <div class="collection-image"><img src="assets/images/ours-peluche-bouquet.jpeg" alt="Peluche et bouquet"
+              loading="lazy"><span class="card-number">04</span></div>
+          <div class="collection-info">
+            <div>
+              <h3>Peluches & cadeaux</h3>
+              <p>Douceur et tendresse</p>
+            </div><button class="arrow-button" aria-label="Ajouter une demande de peluche"
+              data-add="Peluches & cadeaux">↗</button>
+          </div>
+        </article>
+      </div>
+      <p class="section-footnote">Les photos présentées sont des exemples. Les modèles, montants et disponibilités sont
+        confirmés lors de la commande.</p>
+      <div style="text-align:center;margin-top:25px"><a class="button button-primary" href="collections.html">Voir
+          toutes les collections ↗</a></div>
+    </section>
+    <section class="statement-section">
+      <div class="statement-decoration">D</div>
+      <div class="statement-content reveal">
+        <p class="eyebrow centered">VOTRE IDÉE, NOTRE SAVOIR-FAIRE</p>
+        <h2>Un cadeau à la hauteur<br>de <em>votre intention.</em></h2>
+        <p>Un bouquet d'argent, un cadeau de mariage ou une surprise pensée dans les moindres détails : parlons de votre
+          idée.</p><a class="button button-light" href="sur-mesure.html">Créer un cadeau unique <span>↗</span></a>
+      </div>
+      <div class="statement-side">
+        <div class="quote-mark">“</div>
+        <p>Chaque détail compte.<br>Chaque occasion mérite<br>un geste inoubliable.</p><span>— Dina Bouquet</span>
+      </div>
+    </section>
+    <section class="section gallery-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow centered">INSPIRATIONS</p>
+        <h2>Des créations qui racontent</h2>
+        <p>Découvrez les créations Dina Bouquet.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-tile tall reveal"><img src="assets/images/ours-peluche-bouquet.jpeg"
+            alt="Peluche rose et bouquet">
+          <figcaption>Douceur en rose</figcaption>
+        </figure>
+        <figure class="gallery-tile reveal"><img src="assets/images/ours-bouquets-argent.jpeg" alt="Bouquet d'argent">
+          <figcaption>Le bouquet autrement</figcaption>
+        </figure>
+        <figure class="gallery-placeholder reveal"><span class="plus">+</span><strong>Voir toute la galerie</strong>
+          <p>Photos et vidéos des créations</p><a class="button button-outline" href="galerie.html">Ouvrir la
+            galerie</a>
+        </figure>
+      </div>
+    </section>
+    <section class="process-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow centered">SIMPLE & PERSONNALISÉ</p>
+        <h2>Comment commander ?</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step reveal"><span>01</span>
+          <div class="process-icon">♡</div>
+          <h3>Choisissez</h3>
+          <p>Parcourez les collections et sélectionnez votre idée.</p>
+        </div>
+        <div class="process-step reveal"><span>02</span>
+          <div class="process-icon">✎</div>
+          <h3>Personnalisez</h3>
+          <p>Précisez l'occasion, le budget, les couleurs et vos souhaits.</p>
+        </div>
+        <div class="process-step reveal"><span>03</span>
+          <div class="process-icon">↗</div>
+          <h3>Confirmez sur WhatsApp</h3>
+          <p>Envoyez votre demande pour recevoir un devis.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="footer-brand" href="index.html">DINA BOUQUET</a>
+    <p>Fleurs · Cadeaux · Émotions</p>
+    <div class="footer-links"><a href="collections.html">Collections</a><a href="sur-mesure.html">Sur mesure</a><a
+        href="galerie.html">Galerie</a><a href="contact.html">Contact</a></div><small>© <span id="year"></span> Dina
+      Bouquet. Tous droits réservés.</small>
+  </footer>
+  <a class="floating-whatsapp" id="floatingWhatsapp" href="#" aria-label="Contacter Dina Bouquet sur WhatsApp">◔
+    <span>WhatsApp</span></a>
+  <div class="cart-overlay" id="cartOverlay" hidden><button class="overlay-backdrop" id="closeCartBackdrop"
+      aria-label="Fermer le panier"></button>
+    <aside class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-header">
+        <div>
+          <p class="eyebrow">VOTRE SÉLECTION</p>
+          <h2 id="cartTitle">Mon panier <span id="cartTitleCount">(0)</span></h2>
+        </div><button id="closeCart" class="close-cart" aria-label="Fermer">×</button>
+      </div>
+      <div id="cartItems" class="cart-items">
+        <div class="empty-cart"><span>♡</span>
+          <p>Votre panier est encore vide.</p><small>Ajoutez une collection pour préparer votre demande.</small>
+        </div>
+      </div>
+      <div class="cart-footer">
+        <p>Les prix des créations personnalisées sont confirmés sur devis.</p><button
+          class="button button-primary full-width" id="checkoutButton">Commander sur WhatsApp ↗</button><button
+          class="continue-shopping" id="continueShopping">Continuer mes découvertes</button>
+      </div>
+    </aside>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>

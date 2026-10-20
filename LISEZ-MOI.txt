@@ -1,0 +1,33 @@
+DINA BOUQUET — VERSION MULTIPAGES
+
+Pages :
+- index.html : accueil
+- collections.html : collections de produits
+- sur-mesure.html : commandes personnalisées
+- galerie.html : photos et quelques vidéos
+- videos.html : page dédiée aux vidéos
+- contact.html : coordonnées et formulaire de devis WhatsApp
+
+Fichiers communs :
+- styles.css : style du site
+- script.js : menu mobile, panier et demandes WhatsApp
+
+Images :
+Placez vos images ici :
+- assets/images/ours-peluche-bouquet.jpeg
+- assets/images/ours-bouquets-argent.jpeg
+
+Vidéos :
+Placez vos vidéos MP4 dans assets/videos/ avec ces noms exacts :
+- bouquet-fleurs.mp4
+- bouquet-argent.mp4
+- creation-prestige.mp4
+- peluche-cadeau.mp4
+- pack-mariage.mp4
+- coulisses-atelier.mp4
+
+Important :
+- Le numéro WhatsApp utilisé est 77 869 13 68 (format international dans le code : 221778691368).
+- Les coordonnées affichées viennent des informations fournies : Dina Bouquet, fleuriste à Thiès, adresse indiquée Thiès 22445.
+- Les photos d'origine ne sont pas incluses dans ce ZIP : ajoutez-les dans assets/images avec les noms ci-dessus.
+- Pour tester, ouvrez index.html dans un navigateur. Pour une mise en ligne, envoyez tout le dossier en conservant son arborescence.

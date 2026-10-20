@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#64172a">
+  <meta name="description"
+    content="Découvrez en photos et vidéos les bouquets, peluches et cadeaux personnalisés de Dina Bouquet à Thiès.">
+  <title>Galerie photos et vidéos | Dina Bouquet</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .gallery-intro {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center
+    }
+
+    .gallery-subtitle {
+      max-width: 650px;
+      margin: 12px auto 0;
+      color: var(--muted, #777);
+      line-height: 1.8
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px
+    }
+
+    .gallery-tile {
+      position: relative;
+      margin: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #f5eee9;
+      cursor: pointer;
+      min-height: 220px
+    }
+
+    .gallery-tile img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 250px;
+      object-fit: cover;
+      transition: transform .45s ease
+    }
+
+    .gallery-tile:hover img {
+      transform: scale(1.045)
+    }
+
+    .gallery-tile figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 36px 16px 16px;
+      color: white;
+      background: linear-gradient(transparent, rgba(0, 0, 0, .7));
+      font-weight: 600
+    }
+
+    .gallery-tile.tall img {
+      min-height: 330px
+    }
+
+    .gallery-tile.tall {
+      grid-row: span 1
+    }
+
+    .gallery-tile button {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: transparent;
+      cursor: zoom-in
+    }
+
+    .gallery-section {
+      padding-top: 28px
+    }
+
+    .gallery-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      background: rgba(20, 10, 13, .94);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 18px 25px
+    }
+
+    .gallery-lightbox.is-open {
+      display: flex
+    }
+
+    .gallery-lightbox img {
+      max-width: min(100%, 1100px);
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 6px
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 15px;
+      right: 22px;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 42px;
+      cursor: pointer;
+      line-height: 1
+    }
+
+    .lightbox-caption {
+      position: absolute;
+      bottom: 16px;
+      left: 20px;
+      right: 20px;
+      text-align: center;
+      color: white
+    }
+
+    .gallery-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 26px 0 34px
+    }
+
+    .gallery-tabs a {
+      display: inline-block;
+      border: 1px solid #d9c5c5;
+      border-radius: 30px;
+      padding: 10px 18px;
+      color: #64172a;
+      text-decoration: none
+    }
+
+    .gallery-tabs a:hover {
+      background: #64172a;
+      color: white
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px
+    }
+
+    .video-card {
+      min-width: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid rgba(100, 23, 42, .12)
+    }
+
+    .video-card video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 9/16;
+      max-height: 440px;
+      object-fit: contain;
+      background: #171217
+    }
+
+    .video-card-info {
+      padding: 14px 16px 18px
+    }
+
+    .video-card h3 {
+      margin: 0 0 6px;
+      font-size: 1.05rem
+    }
+
+    .video-card p {
+      margin: 0;
+      color: var(--muted, #777);
+      font-size: .9rem
+    }
+
+    .video-note {
+      text-align: center;
+      margin: 20px auto 0;
+      max-width: 650px;
+      color: var(--muted, #777);
+      line-height: 1.7
+    }
+
+    .gallery-section-title {
+      text-align: center;
+      margin-bottom: 28px
+    }
+
+    .gallery-section-title .eyebrow {
+      margin-bottom: 10px
+    }
+
+    .gallery-section-title h2 {
+      margin: 0
+    }
+
+    @media(max-width:800px) {
+
+      .gallery-grid,
+      .video-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+
+      .gallery-tile img,
+      .gallery-tile.tall img {
+        min-height: 240px
+      }
+    }
+
+    @media(max-width:520px) {
+
+      .gallery-grid,
+      .video-grid {
+        grid-template-columns: 1fr;
+        gap: 15px
+      }
+
+      .gallery-tile img,
+      .gallery-tile.tall img {
+        height: 320px;
+        min-height: 0
+      }
+
+      .video-card video {
+        max-height: 520px
+      }
+
+      .gallery-tabs a {
+        padding: 9px 13px;
+        font-size: .9rem
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="announcement">
+    <span>Fleuriste à Thiès · Commandes personnalisées</span>
+    <span class="announcement-note">Des cadeaux qui parlent au cœur</span>
+  </div>
+
+  <header class="site-header">
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <a class="brand" href="index.html" aria-label="Dina Bouquet, accueil">
+      <span class="brand-mark">✿</span>
+      <span class="brand-name">DINA BOUQUET</span>
+      <span class="brand-tagline">FLEURS · CADEAUX · ÉMOTIONS</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Accueil</a>
+      <a href="collections.html">Collections</a>
+      <a href="sur-mesure.html">Sur mesure</a>
+      <a href="galerie.html" aria-current="page">Galerie</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="cart-button" id="openCart" aria-label="Ouvrir le panier">
+      <span class="cart-icon">♧</span><span>Panier</span><b id="cartCount">0</b>
+    </button>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow centered">L'UNIVERS DINA BOUQUET</p>
+      <h1>Nos créations en <em>images.</em></h1>
+      <p>Des fleurs, des cadeaux et des attentions imaginés pour rendre chaque moment inoubliable.</p>
+      <div class="gallery-tabs">
+        <a href="#photos">Voir les photos ↓</a>
+        <a href="#videos">Découvrir les vidéos ↓</a>
+        <a href="collections.html">Nos collections ↗</a>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="photos">
+      <div class="gallery-section-title">
+        <p class="eyebrow centered">INSTANTS À PARTAGER</p>
+        <h2>La galerie photo</h2>
+        <p class="gallery-subtitle">Cliquez sur une photo pour la découvrir en grand format.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="gallery-tile tall">
+          <img src="assets/images/3bouquet.PNG" alt="Création florale Dina Bouquet" loading="lazy">
+          <figcaption>Nos bouquets de fleurs</figcaption>
+          <button type="button" class="photo-zoom" aria-label="Agrandir la photo : nos bouquets de fleurs"
+            data-full="assets/images/3bouquet.PNG" data-caption="Nos bouquets de fleurs"></button>
+        </figure>
+        <figure class="gallery-tile">
+          <img src="assets/images/amour.PNG" alt="Création cadeau sur le thème de l'amour" loading="lazy">
+          <figcaption>Un cadeau plein d'amour</figcaption>
+          <button type="button" class="photo-zoom" aria-label="Agrandir la photo : un cadeau plein d'amour"
+            data-full="assets/images/amour.PNG" data-caption="Un cadeau plein d'amour"></button>
+        </figure>
+        <figure class="gallery-tile">
+          <img src="assets/images/bouquet-chocolat.jpg" alt="Bouquet de chocolats" loading="lazy">
+          <figcaption>Le bouquet gourmand</figcaption>
+          <button type="button" class="photo-zoom" aria-label="Agrandir la photo : bouquet gourmand"
+            data-full="assets/images/bouquet-chocolat.jpg" data-caption="Le bouquet gourmand"></button>
+        </figure>
+        <figure class="gallery-tile">
+          <img src="assets/images/bracelet.jpg" alt="Bracelet cadeau" loading="lazy">
+          <figcaption>Les petites attentions</figcaption>
+          <button type="button" class="photo-zoom" aria-label="Agrandir la photo : bracelet cadeau"
+            data-full="assets/images/bracelet.jpg" data-caption="Les petites attentions"></button>
+        </figure>
+        <figure class="gallery-tile tall">
+          <img src="assets/images/dina.PNG" alt="Création Dina Bouquet" loading="lazy">
+          <figcaption>L'univers Dina Bouquet</figcaption>
+          <button type="button" class="photo-zoom" aria-label="Agrandir la photo Dina Bouquet"
+            data-full="assets/images/dina.PNG" data-caption="L'univers Dina Bouquet"></button>
+        </figure>
+        <figure class="gallery-tile">
+          <img src="assets/images/mariage.PNG" alt="Création pour un mariage" loading="lazy">
+          <figcaption>Pour les grands jours</figcaption>
+          <button type="button" class="photo-zoom" aria-label="Agrandir la photo mariage"
+            data-full="assets/images/mariage.PNG" data-caption="Pour les grands jours"></button>
+        </figure>
+        <figure class="gallery-tile">
+          <img src="assets/images/ours-bouquets-argent.jpeg" alt="Bouquet d'argent" loading="lazy">
+          <figcaption>Le bouquet autrement</figcaption>
+          <button type="button" class="photo-zoom" aria-label="Agrandir la photo du bouquet d'argent"
+            data-full="assets/images/ours-bouquets-argent.jpeg" data-caption="Le bouquet autrement"></button>
+        </figure>
+        <figure class="gallery-tile">
+          <img src="assets/images/ours-peluche-bouquet.jpeg" alt="Peluche accompagnée d'un bouquet" loading="lazy">
+          <figcaption>Douceur et tendresse</figcaption>
+          <button type="button" class="photo-zoom" aria-label="Agrandir la photo peluche et bouquet"
+            data-full="assets/images/ours-peluche-bouquet.jpeg" data-caption="Douceur et tendresse"></button>
+        </figure>
+        <figure class="gallery-tile">
+          <img src="assets/images/peluche.PNG" alt="Peluche cadeau" loading="lazy">
+          <figcaption>Un compagnon tout doux</figcaption>
+          <button type="button" class="photo-zoom" aria-label="Agrandir la photo peluche"
+            data-full="assets/images/peluche.PNG" data-caption="Un compagnon tout doux"></button>
+        </figure>
+        <figure class="gallery-tile">
+          <img src="assets/images/maquette-inspiration.png" alt="Inspiration visuelle Dina Bouquet" loading="lazy">
+          <figcaption>Nos inspirations</figcaption>
+          <button type="button" class="photo-zoom" aria-label="Agrandir l'image inspiration"
+            data-full="assets/images/maquette-inspiration.png" data-caption="Nos inspirations"></button>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="videos">
+      <div class="gallery-section-title">
+        <p class="eyebrow centered">EN MOUVEMENT</p>
+        <h2>Nos créations en vidéo</h2>
+        <p class="gallery-subtitle">Découvrez nos créations en vidéo. Les vidéos se chargent progressivement lorsque
+          vous arrivez près de leur emplacement.</p>
+      </div>
+
+      <div class="video-grid">
+        <article class="video-card"><video controls playsinline preload="none" poster="assets/images/3bouquet.PNG"
+            data-video-src="assets/videos/compressees/1.mp4"
+            aria-label="Vidéo de création Dina Bouquet numéro 1"></video>
+          <div class="video-card-info">
+            <h3>Création en vidéo 01</h3>
+            <p>Découvrez les détails de notre création.</p>
+          </div>
+        </article>
+        <article class="video-card"><video controls playsinline preload="none" poster="assets/images/amour.PNG"
+            data-video-src="assets/videos/compressees/2.mp4"
+            aria-label="Vidéo de création Dina Bouquet numéro 2"></video>
+          <div class="video-card-info">
+            <h3>Création en vidéo 02</h3>
+            <p>Une idée cadeau pleine d'émotion.</p>
+          </div>
+        </article>
+        <article class="video-card"><video controls playsinline preload="none"
+            poster="assets/images/bouquet-chocolat.jpg" data-video-src="assets/videos/compressees/3.mp4"
+            aria-label="Vidéo de création Dina Bouquet numéro 3"></video>
+          <div class="video-card-info">
+            <h3>Création en vidéo 03</h3>
+            <p>Une création originale à découvrir.</p>
+          </div>
+        </article>
+        <article class="video-card"><video controls playsinline preload="none" poster="assets/images/mariage.PNG"
+            data-video-src="assets/videos/compressees/4.mp4"
+            aria-label="Vidéo de création Dina Bouquet numéro 4"></video>
+          <div class="video-card-info">
+            <h3>Création en vidéo 04</h3>
+            <p>Des inspirations pour les grands jours.</p>
+          </div>
+        </article>
+        <article class="video-card"><video controls playsinline preload="none"
+            poster="assets/images/ours-peluche-bouquet.jpeg" data-video-src="assets/videos/compressees/5.mp4"
+            aria-label="Vidéo de création Dina Bouquet numéro 5"></video>
+          <div class="video-card-info">
+            <h3>Création en vidéo 05</h3>
+            <p>Douceur et tendresse.</p>
+          </div>
+        </article>
+        <article class="video-card"><video controls playsinline preload="none" poster="assets/images/bracelet.jpg"
+            data-video-src="assets/videos/compressees/6.mp4"
+            aria-label="Vidéo de création Dina Bouquet numéro 6"></video>
+          <div class="video-card-info">
+            <h3>Création en vidéo 06</h3>
+            <p>Une attention à offrir.</p>
+          </div>
+        </article>
+        <article class="video-card"><video controls playsinline preload="none" poster="assets/images/3bouquet.PNG"
+            data-video-src="assets/videos/compressees/7.mp4"
+            aria-label="Vidéo de création Dina Bouquet numéro 7"></video>
+          <div class="video-card-info">
+            <h3>Création en vidéo 07</h3>
+            <p>Un bouquet pour faire plaisir.</p>
+          </div>
+        </article>
+        <article class="video-card"><video controls playsinline preload="none" poster="assets/images/amour.PNG"
+            data-video-src="assets/videos/compressees/8.mp4"
+            aria-label="Vidéo de création Dina Bouquet numéro 8"></video>
+          <div class="video-card-info">
+            <h3>Création en vidéo 08</h3>
+            <p>Un cadeau pour dire je t'aime.</p>
+          </div>
+        </article>
+        <article class="video-card"><video controls playsinline preload="none"
+            poster="assets/images/ours-bouquets-argent.jpeg" data-video-src="assets/videos/compressees/9.mp4"
+            aria-label="Vidéo de création Dina Bouquet numéro 9"></video>
+          <div class="video-card-info">
+            <h3>Création en vidéo 09</h3>
+            <p>Un bouquet qui sort de l'ordinaire.</p>
+          </div>
+        </article>
+        <article class="video-card"><video controls playsinline preload="none" poster="assets/images/dina.PNG"
+            data-video-src="assets/videos/compressees/10.mp4"
+            aria-label="Vidéo de création Dina Bouquet numéro 10"></video>
+          <div class="video-card-info">
+            <h3>Création en vidéo 10</h3>
+            <p>Dans l'univers Dina Bouquet.</p>
+          </div>
+        </article>
+        <article class="video-card"><video controls playsinline preload="none" poster="assets/images/peluche.PNG"
+            data-video-src="assets/videos/compressees/11.mp4"
+            aria-label="Vidéo de création Dina Bouquet numéro 11"></video>
+          <div class="video-card-info">
+            <h3>Création en vidéo 11</h3>
+            <p>Une peluche à offrir.</p>
+          </div>
+        </article>
+        <article class="video-card"><video controls playsinline preload="none"
+            poster="assets/images/bouquet-chocolat.jpg" data-video-src="assets/videos/compressees/12.mp4"
+            aria-label="Vidéo de création Dina Bouquet numéro 12"></video>
+          <div class="video-card-info">
+            <h3>Création en vidéo 12</h3>
+            <p>Un cadeau gourmand.</p>
+          </div>
+        </article>
+        <article class="video-card"><video controls playsinline preload="none" poster="assets/images/mariage.PNG"
+            data-video-src="assets/videos/compressees/13.mp4"
+            aria-label="Vidéo de création Dina Bouquet numéro 13"></video>
+          <div class="video-card-info">
+            <h3>Création en vidéo 13</h3>
+            <p>Des idées pour célébrer.</p>
+          </div>
+        </article>
+        <article class="video-card"><video controls playsinline preload="none"
+            poster="assets/images/ours-peluche-bouquet.jpeg" data-video-src="assets/videos/compressees/14.mp4"
+            aria-label="Vidéo de création Dina Bouquet numéro 14"></video>
+          <div class="video-card-info">
+            <h3>Création en vidéo 14</h3>
+            <p>Une surprise pleine de douceur.</p>
+          </div>
+        </article>
+        <article class="video-card"><video controls playsinline preload="none" poster="assets/images/3bouquet.PNG"
+            data-video-src="assets/videos/compressees/15.mp4"
+            aria-label="Vidéo de création Dina Bouquet numéro 15"></video>
+          <div class="video-card-info">
+            <h3>Création en vidéo 15</h3>
+            <p>Des fleurs pour chaque occasion.</p>
+          </div>
+        </article>
+        <article class="video-card"><video controls playsinline preload="none" poster="assets/images/bracelet.jpg"
+            data-video-src="assets/videos/compressees/16.mp4"
+            aria-label="Vidéo de création Dina Bouquet numéro 16"></video>
+          <div class="video-card-info">
+            <h3>Création en vidéo 16</h3>
+            <p>Le détail qui fait plaisir.</p>
+          </div>
+        </article>
+        <article class="video-card"><video controls playsinline preload="none" poster="assets/images/amour.PNG"
+            data-video-src="assets/videos/compressees/17.mp4"
+            aria-label="Vidéo de création Dina Bouquet numéro 17"></video>
+          <div class="video-card-info">
+            <h3>Création en vidéo 17</h3>
+            <p>Une nouvelle inspiration cadeau.</p>
+          </div>
+        </article>
+        <article class="video-card"><video controls playsinline preload="none"
+            poster="assets/images/ours-bouquets-argent.jpeg" data-video-src="assets/videos/compressees/18.mp4"
+            aria-label="Vidéo de création Dina Bouquet numéro 18"></video>
+          <div class="video-card-info">
+            <h3>Création en vidéo 18</h3>
+            <p>Une création à découvrir.</p>
+          </div>
+        </article>
+        <article class="video-card"><video controls playsinline preload="none" poster="assets/images/dina.PNG"
+            data-video-src="assets/videos/compressees/19.mp4"
+            aria-label="Vidéo de création Dina Bouquet numéro 19"></video>
+          <div class="video-card-info">
+            <h3>Création en vidéo 19</h3>
+            <p>Merci de découvrir Dina Bouquet.</p>
+          </div>
+        </article>
+      </div>
+      <p class="video-note">Envie d'une création personnalisée ? <a href="contact.html">Contactez Dina Bouquet</a> pour
+        demander un devis.</p>
+    </section>
+  </main>
+
+  <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Photo agrandie">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Fermer l'image agrandie">×</button>
+    <img id="lightboxImage" src="" alt="">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="index.html">DINA BOUQUET</a>
+    <p>Fleurs · Cadeaux · Émotions</p>
+    <div class="footer-links">
+      <a href="collections.html">Collections</a>
+      <a href="sur-mesure.html">Sur mesure</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <small>© <span id="year"></span> Dina Bouquet. Tous droits réservés.</small>
+  </footer>
+
+  <a class="floating-whatsapp" id="floatingWhatsapp" href="#" aria-label="Contacter Dina Bouquet sur WhatsApp">◔
+    <span>WhatsApp</span></a>
+
+  <div class="cart-overlay" id="cartOverlay" hidden>
+    <button class="overlay-backdrop" id="closeCartBackdrop" aria-label="Fermer le panier"></button>
+    <aside class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-header">
+        <div>
+          <p class="eyebrow">VOTRE SÉLECTION</p>
+          <h2 id="cartTitle">Mon panier <span id="cartTitleCount">(0)</span></h2>
+        </div>
+        <button id="closeCart" class="close-cart" aria-label="Fermer">×</button>
+      </div>
+      <div id="cartItems" class="cart-items">
+        <div class="empty-cart"><span>♡</span>
+          <p>Votre panier est encore vide.</p><small>Ajoutez une collection pour préparer votre demande.</small>
+        </div>
+      </div>
+      <div class="cart-footer">
+        <p>Les prix des créations personnalisées sont confirmés sur devis.</p>
+        <button class="button button-primary full-width" id="checkoutButton">Commander sur WhatsApp ↗</button>
+        <button class="continue-shopping" id="continueShopping">Continuer mes découvertes</button>
+      </div>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (function () {
+      const lightbox = document.getElementById('galleryLightbox');
+      const lightboxImage = document.getElementById('lightboxImage');
+      const lightboxCaption = document.getElementById('lightboxCaption');
+      const closeButton = document.getElementById('lightboxClose');
+      let lastFocusedElement = null;
+
+      function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        lightboxImage.src = '';
+        document.body.style.overflow = '';
+        if (lastFocusedElement) lastFocusedElement.focus();
+      }
+
+      document.querySelectorAll('.photo-zoom').forEach(function (button) {
+        button.addEventListener('click', function () {
+          lastFocusedElement = button;
+          lightboxImage.src = button.dataset.full;
+          lightboxImage.alt = button.dataset.caption || '';
+          lightboxCaption.textContent = button.dataset.caption || '';
+          lightbox.classList.add('is-open');
+          document.body.style.overflow = 'hidden';
+          closeButton.focus();
+        });
+      });
+
+      closeButton.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function (event) {
+        if (event.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+      });
+
+      const videos = document.querySelectorAll('video[data-video-src]');
+      function loadVideo(video) {
+        if (video.dataset.loaded === 'true') return;
+        video.src = video.dataset.videoSrc;
+        video.dataset.loaded = 'true';
+        video.load();
+      }
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              loadVideo(entry.target);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: '250px 0px', threshold: 0.01 });
+        videos.forEach(function (video) { observer.observe(video); });
+      } else {
+        videos.forEach(loadVideo);
+      }
+    })();
+  </script>
+  <script src="script.js"></script>
+</body>
+
+</html>

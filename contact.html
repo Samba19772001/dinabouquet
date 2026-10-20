@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#64172a">
+  <meta name="description"
+    content="Contactez Dina Bouquet à Thiès pour une demande de devis et une commande personnalisée.">
+  <title>Contact | Dina Bouquet</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="announcement"><span>Fleuriste à Thiès · Commandes personnalisées</span><span class="announcement-note">Des
+      cadeaux qui parlent au cœur</span></div>
+  <header class="site-header">
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <a class="brand" href="index.html" aria-label="Dina Bouquet, accueil"><span class="brand-mark">✿</span><span
+        class="brand-name">DINA BOUQUET</span><span class="brand-tagline">FLEURS · CADEAUX · ÉMOTIONS</span></a>
+    <nav class="nav-links" id="navLinks"><a href="index.html">Accueil</a><a href="collections.html">Collections</a><a
+        href="sur-mesure.html">Sur mesure</a><a href="galerie.html">Galerie</a><a href="videos.html">Vidéos</a><a
+        href="contact.html" aria-current="page">Contact</a></nav>
+    <button class="cart-button" id="openCart" aria-label="Ouvrir le panier"><span
+        class="cart-icon">♧</span><span>Panier</span><b id="cartCount">0</b></button>
+  </header>
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow centered">CONTACT</p>
+      <h1>Parlons de votre <em>prochaine surprise.</em></h1>
+      <p>Indiquez-nous l'occasion et votre idée. Votre demande sera préparée dans WhatsApp afin que nous puissions
+        échanger sur le devis.</p>
+    </section>
+    <section class="contact-section">
+      <div class="contact-copy">
+        <p class="eyebrow">PARLONS DE VOTRE PROJET</p>
+        <h2>Le cadeau parfait<br>commence par <em>une idée.</em></h2>
+        <p>Pour un bouquet de fleurs, un bouquet d'argent, un cadeau de mariage ou une création personnalisée, partagez
+          votre budget et votre occasion.</p>
+        <div class="contact-detail"><span>✦</span>
+          <div><b>Téléphone / WhatsApp</b><small><a href="https://wa.me/221778691368">77 869 13 68</a></small></div>
+        </div>
+        <div class="contact-detail"><span>✦</span>
+          <div><b>Adresse</b><small>Thiès, Sénégal</small></div>
+        </div>
+        <div class="contact-detail"><span>✦</span>
+          <div><b>Livraison</b><small>À organiser et confirmer lors de la commande</small></div>
+        </div>
+        <div class="contact-detail"><span>✦</span>
+          <div><b>Google</b><small><a href="https://www.google.com/search?q=dinabouquet+fleuriste" target="_blank"
+                rel="noopener">Consulter la fiche Google de Dina Bouquet ↗</a></small></div>
+        </div>
+      </div>
+      <form class="contact-form" id="quoteForm">
+        <h3>Demander un devis</h3>
+        <p>Décrivez-nous ce que vous imaginez.</p>
+        <label for="customerName">Votre nom</label><input id="customerName" name="name" placeholder="Nom et prénom"
+          required>
+        <label for="occasion">Occasion</label><select id="occasion" name="occasion" required>
+          <option value="">Sélectionner une occasion</option>
+          <option>Anniversaire</option>
+          <option>Mariage / fiançailles</option>
+          <option>Surprise romantique</option>
+          <option>Cadeau prestige</option>
+          <option>Autre occasion</option>
+        </select>
+        <label for="budget">Budget estimé (FCFA)</label><input id="budget" name="budget"
+          placeholder="Ex. 50 000 ou sur conseil">
+        <label for="details">Votre idée</label><textarea id="details" name="details" rows="4"
+          placeholder="Type de bouquet, couleurs, montant, date souhaitée…"></textarea>
+        <button class="button button-primary full-width" type="submit">Envoyer la demande sur WhatsApp
+          <span>↗</span></button><small class="form-note">Aucun paiement n'est effectué sur ce site. Le devis et la
+          livraison sont confirmés avec vous.</small>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="footer-brand" href="index.html">DINA BOUQUET</a>
+    <p>Fleurs · Cadeaux · Émotions</p>
+    <div class="footer-links"><a href="collections.html">Collections</a><a href="sur-mesure.html">Sur mesure</a><a
+        href="galerie.html">Galerie</a><a href="contact.html">Contact</a></div><small>© <span id="year"></span> Dina
+      Bouquet. Tous droits réservés.</small>
+  </footer>
+  <a class="floating-whatsapp" id="floatingWhatsapp" href="#" aria-label="Contacter Dina Bouquet sur WhatsApp">◔
+    <span>WhatsApp</span></a>
+  <div class="cart-overlay" id="cartOverlay" hidden><button class="overlay-backdrop" id="closeCartBackdrop"
+      aria-label="Fermer le panier"></button>
+    <aside class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-header">
+        <div>
+          <p class="eyebrow">VOTRE SÉLECTION</p>
+          <h2 id="cartTitle">Mon panier <span id="cartTitleCount">(0)</span></h2>
+        </div><button id="closeCart" class="close-cart" aria-label="Fermer">×</button>
+      </div>
+      <div id="cartItems" class="cart-items">
+        <div class="empty-cart"><span>♡</span>
+          <p>Votre panier est encore vide.</p><small>Ajoutez une collection pour préparer votre demande.</small>
+        </div>
+      </div>
+      <div class="cart-footer">
+        <p>Les prix des créations personnalisées sont confirmés sur devis.</p><button
+          class="button button-primary full-width" id="checkoutButton">Commander sur WhatsApp ↗</button><button
+          class="continue-shopping" id="continueShopping">Continuer mes découvertes</button>
+      </div>
+    </aside>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>
